@@ -16,7 +16,7 @@
 
     <div class="col-12">
       <p-table
-        [value]="[]"
+        [value]="loads"
         responsiveLayout="scroll"
         [paginator]="true"
         [rows]="10"
@@ -28,16 +28,18 @@
           <tr>
             <th style="font-size: small" style="width: 50px"></th>
             <th style="font-size: small">#</th>
+            <th style="font-size: small">Nombre sucursal</th>
             <th style="font-size: small">Cantidad</th>
-            <th style="font-size: small">Id sucursal</th>
           </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-building>
-          <tr [routerLink]="['./', building._id]">
+        <ng-template pTemplate="body" let-load>
+          <tr [routerLink]="['./', load.noprestamo]">
             <td class="d-md-table-cell">
               <div class="d-flex align-items-center"></div>
             </td>
-            <td style="font-size: small">{{ building.name }}</td>
+            <td style="font-size: small">{{ load.noprestamo }}</td>
+            <td style="font-size: small">{{ load.nombresucursal }}</td>
+            <td style="font-size: small">{{ load.cantidad }}</td>
           </tr>
         </ng-template>
       </p-table>
