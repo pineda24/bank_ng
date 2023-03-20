@@ -24,8 +24,7 @@ export class StoresComponent implements OnInit {
 
   async getStores() {
     await this.data.findByParams('/sucursales', '').subscribe((res) => {
-      this.stores = res;
-      console.log(this.stores);
+      this.stores = res.sucursales;
     });
   }
 }

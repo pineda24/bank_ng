@@ -12,6 +12,7 @@ export class StoreComponent implements OnInit {
   store: Store = new Store();
   idStore: any;
   action: any;
+  regions: Array<number> = [1,2];
 
   constructor(
     private data: DataService,
@@ -23,9 +24,14 @@ export class StoreComponent implements OnInit {
     this.idStore = this.route.snapshot.paramMap.get('id');
     this.action = this.idStore ? 'edit' : 'create';
     if (this.action == 'edit') {
-      this.store = await this.data
-        .findByParams('/sucursales', this.idStore)
-        .toPromise();
+      // this.store = await this.data
+      //   .findByParams('/sucursales', this.idStore)
+      //   .toPromise();
+      this.data
+      .updateOnee('/sucursales', this.idStore, this.store)
+      .subscribe((res: any) => {
+        this.router.navigate(['..'], { relativeTo: this.route });
+      });
     }
   }
 
@@ -38,8 +44,9 @@ export class StoreComponent implements OnInit {
   }
 
   async createCollection() {
+    console.log(this.store);
     this.data
-      .insertOne('/sucursales', this.store)
+      .insertOne('/sucursales', JSON.stringify(this.store))
       .subscribe((res: any) => {
         this.router.navigate(['..'], { relativeTo: this.route });
       });
