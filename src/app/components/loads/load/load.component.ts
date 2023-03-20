@@ -26,7 +26,7 @@ export class LoadComponent implements OnInit {
     this.action = this.idLoad ? 'edit' : 'create';
     this.getStores();
     if (this.action == 'edit') {
-      this.data.findById('/prestamos', this.idLoad).subscribe((res: any) => {
+      this.data.findById('/prestamos', `${this.idLoad}/`).subscribe((res: any) => {
         console.log(res);
         this.load = res.prestamos[0];
       });
@@ -51,7 +51,7 @@ export class LoadComponent implements OnInit {
 
   async updateCollection() {
     this.data
-      .updateOnee('/prestamos', this.idLoad, JSON.stringify(this.load))
+      .updateOnee('/prestamos', `${this.idLoad}/`, JSON.stringify(this.load))
       .subscribe((res: any) => {
         this.router.navigate(['..'], { relativeTo: this.route });
       });

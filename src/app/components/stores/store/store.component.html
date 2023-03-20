@@ -21,9 +21,10 @@
                   [(ngModel)]="store.idsucursal"
                   type="text"
                   class="form-control"
-                  name="squareName"
-                  id="squareName"
-                  placeholder="Nombre de la plaza"
+                  name="idsucursal"
+                  id="idsucursal"
+                  placeholder="Nombre sucursal"
+                  disabled="{{this.action == 'edit'}}"
                   required
                 />
                 <label class="form-label">
@@ -42,8 +43,8 @@
                   [(ngModel)]="store.nombresucursal"
                   type="text"
                   class="form-control"
-                  name="squareName"
-                  id="squareName"
+                  name="nombresucursal"
+                  id="nombresucursal"
                   placeholder="Nombre de la plaza"
                   required
                 />
@@ -63,8 +64,8 @@
                   [(ngModel)]="store.ciudadsucursal"
                   type="text"
                   class="form-control"
-                  name="squareName"
-                  id="squareName"
+                  name="ciudadsucursal"
+                  id="ciudadsucursal"
                   placeholder="Nombre de la plaza"
                   required
                 />
@@ -84,8 +85,8 @@
                   [(ngModel)]="store.activos"
                   type="number"
                   class="form-control"
-                  name="squareName"
-                  id="squareName"
+                  name="activos"
+                  id="activos"
                   placeholder="Nombre de la plaza"
                   required
                 />

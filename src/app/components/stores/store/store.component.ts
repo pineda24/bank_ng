@@ -12,7 +12,7 @@ export class StoreComponent implements OnInit {
   store: Store = new Store();
   idStore: any;
   action: any;
-  regions: Array<number> = [1,2];
+  regions: Array<number> = [1, 2];
 
   constructor(
     private data: DataService,
@@ -28,11 +28,10 @@ export class StoreComponent implements OnInit {
       //   .findByParams('/sucursales', this.idStore)
       //   .toPromise();
       this.data
-      .findById('/sucursales', this.idStore)
-      .subscribe((res: any) => {
-        console.log(res)
-        // this.store = res.sucursales[0];
-      });
+        .findById('/sucursales', `${this.idStore}/`)
+        .subscribe((res: any) => {
+          if (res.sucursales) this.store = res.sucursales[0];
+        });
     }
   }
 
@@ -55,7 +54,7 @@ export class StoreComponent implements OnInit {
 
   async updateCollection() {
     this.data
-      .updateOnee('/sucursales', this.idStore, this.store)
+      .updateOnee('/sucursales',`${this.idStore}/`, this.store)
       .subscribe((res: any) => {
         this.router.navigate(['..'], { relativeTo: this.route });
       });

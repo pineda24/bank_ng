@@ -21,9 +21,10 @@
                   [(ngModel)]="load.noprestamo"
                   type="text"
                   class="form-control"
-                  name="squareName"
-                  id="squareName"
+                  name="noprestamo"
+                  id="noprestamo"
                   placeholder="Nombre de la plaza"
+                  disabled="{{this.action == 'edit'}}"
                   required
                 />
                 <label class="form-label">
@@ -40,9 +41,9 @@
               <!-- <p-dropdown class="mt-2" [options]="[1,2]" [style]="{ width: '100%', height: '55px' }"></p-dropdown> -->
               <div class="select-wrapper" style="width: 100%; display: flex">
                 <select
-                  name="cars"
+                  name="idsucursal"
                   [(ngModel)]="load.idsucursal"
-                  id="cars"
+                  id="idsucursal"
                   class="form-control"
                   style="margin-right: 20px"
                   [style]="{ width: '100%', height: '60px' }"
@@ -67,8 +68,8 @@
                   [(ngModel)]="load.cantidad"
                   type="number"
                   class="form-control"
-                  name="squareName"
-                  id="squareName"
+                  name="cantidad"
+                  id="cantidad"
                   placeholder="Nombre de la plaza"
                   required
                 />
