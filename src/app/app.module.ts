@@ -11,6 +11,8 @@ import { MenuComponent } from './layout/main/menu/menu.component';
 import { MainComponent } from './layout/main/main.component';
 import { SideComponent } from './layout/main/side/side.component';
 import { MenuVerticalComponent } from './layout/main/menu/menu-vertical/menu-vertical.component';
+import { StoresComponent } from './components/stores/stores.component';
+import { LoadsComponent } from './components/loads/loads.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { MenuVerticalComponent } from './layout/main/menu/menu-vertical/menu-ver
     MenuVerticalComponent,
     FooterComponent,
     HeaderComponent,
-    SideComponent
+    SideComponent,
+    StoresComponent,
+    LoadsComponent
   ],
   imports: [
     BrowserModule,
