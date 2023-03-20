@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,6 +33,7 @@ import { StepsModule } from 'primeng/steps';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { DragDropModule } from 'primeng/dragdrop';
 import { PanelModule } from 'primeng/panel';
+
 import { HttpClientModule } from '@angular/common/http';
 import { StoreComponent } from './components/stores/store/store.component';
 import { LoadComponent } from './components/loads/load/load.component';
@@ -54,6 +56,7 @@ import { LoadComponent } from './components/loads/load/load.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     TabMenuModule,
     ChartModule,

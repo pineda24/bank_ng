@@ -1,1 +1,128 @@
-<p>store works!</p>
+<div class="container-xl">
+  <div class="header mt-3" style="display: flex">
+    <div class="d-table-cell tar">
+      <i class="fa-solid fa-arrow-left" [routerLink]="['../']"></i>
+    </div>
+    <div class="titleHeader" style="margin-left: 30px">
+      <h2>Crear sucursal</h2>
+    </div>
+  </div>
+
+  <form (ngSubmit)="saveCollection()" novalidate>
+    <div class="card mt-3">
+      <div class="card-body">
+        <div class="row">
+          <div class="hr-text hr-text-left">Datos generales</div>
+
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
+            <div class="col">
+              <div class="mb-3 form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="squareName"
+                  id="squareName"
+                  placeholder="Nombre de la plaza"
+                  required
+                />
+                <label class="form-label">
+                  <span>Id de la sucursal</span>
+                  <span class="form-required ps-1">*</span>
+                </label>
+                <div class="invalid-feedback">
+                  <div>Id de la sucursal requerido</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="mb-3 form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="squareName"
+                  id="squareName"
+                  placeholder="Nombre de la plaza"
+                  required
+                />
+                <label class="form-label">
+                  <span>Nombre</span>
+                  <span class="form-required ps-1">*</span>
+                </label>
+                <div class="invalid-feedback">
+                  <div>Nombre requerido</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="mb-3 form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="squareName"
+                  id="squareName"
+                  placeholder="Nombre de la plaza"
+                  required
+                />
+                <label class="form-label">
+                  <span>Ciudad</span>
+                  <span class="form-required ps-1">*</span>
+                </label>
+                <div class="invalid-feedback">
+                  <div>Ciudad requerido</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="mb-3 form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="squareName"
+                  id="squareName"
+                  placeholder="Nombre de la plaza"
+                  required
+                />
+                <label class="form-label">
+                  <span>Activos</span>
+                  <span class="form-required ps-1">*</span>
+                </label>
+                <div class="invalid-feedback">
+                  <div>Activos requerido</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <!-- <p-dropdown class="mt-2" [options]="[1,2]" [style]="{ width: '100%', height: '55px' }"></p-dropdown> -->
+              <div class="select-wrapper" style="width: 100%; display: flex">
+                <select
+                  name="cars"
+                  id="cars"
+                  class="form-control mt-1"
+                  style="margin-right: 20px"
+                  [style]="{ width: '100%', height: '60px' }"
+                >
+                  <option value="item" *ngFor="let item of [1, 2]">
+                    {{ item }}
+                  </option>
+                  <span class="dropdown-icon"
+                    ><i class="fas fa-chevron-down" style="color: #181823"></i
+                  ></span>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-end gap-2" style="margin-top: 20px">
+          <button type="submit" class="btn btn-primary">Guardar</button>
+          <button type="button" class="btn btn-link" [routerLink]="['../']">
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
