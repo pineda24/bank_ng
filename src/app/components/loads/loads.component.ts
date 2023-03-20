@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoadView } from 'src/app/models/views/storeView.model';
 import { DataService } from 'src/app/services/data.service';
+import { Load } from 'src/app/models/load.model';
 
 @Component({
   selector: 'app-loads',
@@ -10,7 +11,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class LoadsComponent implements OnInit {
 
-  loads: Array<LoadView> = [];
+  loads: Array<Load> = [];
 
   constructor(
     private data: DataService,
