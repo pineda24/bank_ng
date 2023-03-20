@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  version: "1.5.4",
+  serverBaseURL: "http://0.0.0.0:8000/bankApp",
 };
 
 /*

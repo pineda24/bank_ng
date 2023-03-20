@@ -14,6 +14,25 @@ import { MenuVerticalComponent } from './layout/main/menu/menu-vertical/menu-ver
 import { StoresComponent } from './components/stores/stores.component';
 import { LoadsComponent } from './components/loads/loads.component';
 
+//primeng
+import { TabMenuModule } from 'primeng/tabmenu';
+import { ChartModule } from 'primeng/chart';
+import { TabViewModule } from 'primeng/tabview';
+import { CalendarModule } from 'primeng/calendar';
+import { ToggleButtonModule } from 'primeng/togglebutton';
+import { DialogModule } from 'primeng/dialog';
+import { ListboxModule } from 'primeng/listbox';
+import { ColorPickerModule } from 'primeng/colorpicker';
+import { DropdownModule } from 'primeng/dropdown';
+import { ToolbarModule } from 'primeng/toolbar';
+import { TableModule } from 'primeng/table';
+import { MenuModule } from 'primeng/menu';
+import { ImageModule } from 'primeng/image';
+import { StepsModule } from 'primeng/steps';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { DragDropModule } from 'primeng/dragdrop';
+import { PanelModule } from 'primeng/panel';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,13 +45,32 @@ import { LoadsComponent } from './components/loads/loads.component';
     HeaderComponent,
     SideComponent,
     StoresComponent,
-    LoadsComponent
+    LoadsComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    TabMenuModule,
+    ChartModule,
+    TabViewModule,
+    CalendarModule,
+    ToggleButtonModule,
+    DialogModule,
+    ListboxModule,
+    DropdownModule,
+    ToolbarModule,
+    TableModule,
+    MenuModule,
+    ImageModule,
+    StepsModule,
+    PanelModule,
+    DragDropModule,
+    ColorPickerModule,
+    SelectButtonModule,
+    AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
