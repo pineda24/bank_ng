@@ -24,6 +24,7 @@ export class LoadComponent implements OnInit {
   async ngOnInit() {
     this.idLoad = this.route.snapshot.paramMap.get('id');
     this.action = this.idLoad ? 'edit' : 'create';
+    this.getStores();
     if (this.action == 'edit') {
       this.load = await this.data
         .findByParams('/prestamos', this.idLoad)
