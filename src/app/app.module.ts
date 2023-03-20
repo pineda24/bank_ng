@@ -33,6 +33,8 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 import { DragDropModule } from 'primeng/dragdrop';
 import { PanelModule } from 'primeng/panel';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreComponent } from './components/stores/store/store.component';
+import { LoadComponent } from './components/loads/load/load.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { HttpClientModule } from '@angular/common/http';
     SideComponent,
     StoresComponent,
     LoadsComponent,
+    StoreComponent,
+    LoadComponent,
   ],
   imports: [
     BrowserModule,
