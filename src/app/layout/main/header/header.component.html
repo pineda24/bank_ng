@@ -1,0 +1,79 @@
+<div class="header-false"></div>
+<div #sidebar>
+  <div class="logo-details">
+    <i class="bi bi-wrench icon"></i>
+    <div class="logo_name">Hoop Central</div>
+    <i #toggleBtn  id="btn"></i>
+  </div>
+  <ul class="nav-list">
+    <li>
+      <a [routerLink]="['/']">
+        <!-- <i class="bi bi-house-door"></i> -->
+        <i class="bi bi-house-door-fill"></i>
+        <span class="links_name">Inicio</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/news']" routerLinkActive="active">
+        <i class="bi bi-newspaper"></i>
+        <span class="links_name">Noticias</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/tournaments']" routerLinkActive="active">
+        <i class="bi bi-trophy"></i>
+        <span class="links_name">Torneos</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/teams']" routerLinkActive="active">
+        <i class="bi bi-people"></i>
+        <span class="links_name">Equipos</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/courts']" routerLinkActive="active">
+        <i><img src="assets/icons/admin/stadium.png" height="20px"/></i>
+        <span class="links_name">Canchas</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/players']" routerLinkActive="active">
+        <i class="bx bi-person-lines-fill"></i>
+        <span class="links_name">Jugadores</span>
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/my-games']" routerLinkActive="active">
+        <i class="fa-solid fa-basketball"></i>
+        <span class="links_name">Mis partidos</span>
+      </a>
+    </li>
+    <!-- <li>
+      <a [routerLink]="['/referees']" routerLinkActive="active">
+        <i class="bx bi-stoplights"></i>
+        <span class="links_name">Árbitros</span>
+      </a>
+    </li> -->
+    <!-- <li>
+      <a [routerLink]="['/coaches']" routerLinkActive="active">
+        <i class="bx bi-person-badge"></i>
+        <span class="links_name">Entrenadores</span>
+      </a>
+    </li> -->
+    <li>
+      <a [routerLink]="['/administration']" routerLinkActive="active">
+        <i class="bi bi-plus-square-fill"></i>
+        <span class="links_name">Administracion</span>
+      </a>
+    </li>
+    <!-- <li>
+      <a [routerLink]="['/']" routerLinkActive="active">
+        <i class="bi bi-gear-fill"></i>
+        <span class="links_name">Configuración</span>
+      </a>
+    </li> -->
+  </ul>
+  <li class="profile">
+  </li>
+</div>

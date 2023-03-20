@@ -31,7 +31,7 @@
     "chartjs-gauge": "^0.3.0",
     "chartjs-plugin-annotation": "^2.1.1",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.6.3",
+    "jquery": "^3.6.4",
     "moment": "^2.29.4",
     "ngx-autosize-input": "^14.0.0",
     "ngx-cookie-service": "^14.0.1",
