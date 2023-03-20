@@ -61,5 +61,11 @@ export class LoadComponent implements OnInit {
     this.stores = await await this.data
       .findByParams('/sucursales', '')
       .toPromise();
+
+      this.data
+      .findByParams('/sucursales', '')
+      .subscribe((res: any) => {
+        this.stores = res.sucursales;
+      });
   }
 }
