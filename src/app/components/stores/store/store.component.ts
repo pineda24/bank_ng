@@ -31,7 +31,7 @@ export class StoreComponent implements OnInit {
       .findById('/sucursales', this.idStore)
       .subscribe((res: any) => {
         console.log(res)
-        this.store = res.sucursales[0];
+        // this.store = res.sucursales[0];
       });
     }
   }
