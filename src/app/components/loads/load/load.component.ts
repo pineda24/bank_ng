@@ -10,8 +10,8 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./load.component.css'],
 })
 export class LoadComponent implements OnInit {
-  load:Load = new Load();
-  stores:Array<Store> = [];
+  load: Load = new Load();
+  stores: Array<Store> = [];
   idLoad: any;
   action: any;
 
@@ -26,9 +26,10 @@ export class LoadComponent implements OnInit {
     this.action = this.idLoad ? 'edit' : 'create';
     this.getStores();
     if (this.action == 'edit') {
-      this.load = await this.data
-        .findByParams('/prestamos', this.idLoad)
-        .toPromise();
+      this.data.findById('/prestamos', this.idLoad).subscribe((res: any) => {
+        console.log(res);
+        this.load = res.prestamos[0];
+      });
     }
   }
 
@@ -41,20 +42,24 @@ export class LoadComponent implements OnInit {
   }
 
   async createCollection() {
-    this.data.insertOne('/prestamos', this.load).subscribe((res: any) => {
-      this.router.navigate(['..'], { relativeTo: this.route });
-    });
-  }
-
-  async updateCollection() {
     this.data
-      .updateOnee('/prestamos', this.idLoad, this.load)
+      .insertOne('/prestamos', JSON.stringify(this.load))
       .subscribe((res: any) => {
         this.router.navigate(['..'], { relativeTo: this.route });
       });
   }
 
-  async getStores(){
-    this.stores = await await this.data.findByParams('/sucursales', '').toPromise();
+  async updateCollection() {
+    this.data
+      .updateOnee('/prestamos', this.idLoad, JSON.stringify(this.load))
+      .subscribe((res: any) => {
+        this.router.navigate(['..'], { relativeTo: this.route });
+      });
+  }
+
+  async getStores() {
+    this.stores = await await this.data
+      .findByParams('/sucursales', '')
+      .toPromise();
   }
 }

@@ -28,9 +28,10 @@ export class StoreComponent implements OnInit {
       //   .findByParams('/sucursales', this.idStore)
       //   .toPromise();
       this.data
-      .updateOnee('/sucursales', this.idStore, this.store)
+      .findById('/sucursales', this.idStore)
       .subscribe((res: any) => {
-        this.router.navigate(['..'], { relativeTo: this.route });
+        console.log(res)
+        this.store = res.sucursales[0];
       });
     }
   }
