@@ -29,9 +29,14 @@ export class StoreComponent implements OnInit {
       //   .toPromise();
       this.data
         .findById('/sucursales', `${this.idStore}/`)
-        .subscribe((res: any) => {
-          if (res.sucursales) this.store = res.sucursales[0];
-        });
+        .subscribe(
+          (res: any) => {
+            if (res.sucursales) this.store = res.sucursales[0];
+          },
+          (err) => {
+            console.log(err);
+          }
+        );
     }
   }
 
@@ -47,16 +52,26 @@ export class StoreComponent implements OnInit {
     console.log(this.store);
     this.data
       .insertOne('/sucursales', JSON.stringify(this.store))
-      .subscribe((res: any) => {
-        this.router.navigate(['..'], { relativeTo: this.route });
-      });
+      .subscribe(
+        (res: any) => {
+          this.router.navigate(['..'], { relativeTo: this.route });
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
   }
 
   async updateCollection() {
     this.data
       .updateOnee('/sucursales',`${this.idStore}/`, this.store)
-      .subscribe((res: any) => {
-        this.router.navigate(['..'], { relativeTo: this.route });
-      });
+      .subscribe(
+        (res: any) => {
+          this.router.navigate(['..'], { relativeTo: this.route });
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
   }
 }

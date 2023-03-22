@@ -25,6 +25,7 @@
         <ng-template pTemplate="header">
           <tr>
             <th style="font-size: small" style="width: 50px"></th>
+            <th style="font-size: small">ID de sucursal</th>
             <th style="font-size: small">Nombre</th>
             <th style="font-size: small">Ciudad</th>
             <th style="font-size: small">Activos</th>
@@ -36,6 +37,7 @@
             <td class="d-md-table-cell">
               <div class="d-flex align-items-center"></div>
             </td>
+            <td style="font-size: small">{{ store.idsucursal }}</td>
             <td style="font-size: small">{{ store.nombresucursal }}</td>
             <td style="font-size: small">{{ store.ciudadsucursal }}</td>
             <td style="font-size: small">${{ store.activos }}</td>

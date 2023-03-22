@@ -23,9 +23,14 @@ export class LoadsComponent implements OnInit {
   }
 
   async getStores() {
-    await this.data.findByParams('/prestamos', '').subscribe((res) => {
-      this.loads = res.prestamos;
-    });
+    await this.data.findByParams('/prestamos', '').subscribe(
+      (res) => {
+        this.loads = res.prestamos;
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 
 }

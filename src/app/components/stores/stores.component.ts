@@ -23,8 +23,13 @@ export class StoresComponent implements OnInit {
   }
 
   async getStores() {
-    await this.data.findByParams('/sucursales', '').subscribe((res) => {
-      this.stores = res.sucursales;
-    });
+    await this.data.findByParams('/sucursales', '').subscribe(
+      (res) => {
+        this.stores = res.sucursales;
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 }

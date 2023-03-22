@@ -26,10 +26,14 @@ export class LoadComponent implements OnInit {
     this.action = this.idLoad ? 'edit' : 'create';
     this.getStores();
     if (this.action == 'edit') {
-      this.data.findById('/prestamos', `${this.idLoad}/`).subscribe((res: any) => {
-        console.log(res);
+      this.data.findById('/prestamos', `${this.idLoad}/`).subscribe(
+        (res: any) => {
         this.load = res.prestamos[0];
-      });
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
     }
   }
 
@@ -44,17 +48,27 @@ export class LoadComponent implements OnInit {
   async createCollection() {
     this.data
       .insertOne('/prestamos', JSON.stringify(this.load))
-      .subscribe((res: any) => {
-        this.router.navigate(['..'], { relativeTo: this.route });
-      });
+      .subscribe(
+        (res: any) => {
+          this.router.navigate(['..'], { relativeTo: this.route });
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
   }
 
   async updateCollection() {
     this.data
       .updateOnee('/prestamos', `${this.idLoad}/`, JSON.stringify(this.load))
-      .subscribe((res: any) => {
-        this.router.navigate(['..'], { relativeTo: this.route });
-      });
+      .subscribe(
+        (res: any) => {
+          this.router.navigate(['..'], { relativeTo: this.route });
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
   }
 
   async getStores() {
@@ -64,8 +78,13 @@ export class LoadComponent implements OnInit {
 
       this.data
       .findByParams('/sucursales', '')
-      .subscribe((res: any) => {
-        this.stores = res.sucursales;
-      });
+      .subscribe(
+        (res: any) => {
+          this.stores = res.sucursales;
+        },
+        (err) => {
+          console.log(err);
+        }
+      );
   }
 }
