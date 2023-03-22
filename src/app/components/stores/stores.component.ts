@@ -32,4 +32,11 @@ export class StoresComponent implements OnInit {
       }
     );
   }
+
+  async deleteStore(id: string) {
+    await this.data.deleteOne('/sucursales', `${id}/`).subscribe((res) => {
+      console.log(res);
+      this.getStores();
+    });
+  }
 }

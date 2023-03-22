@@ -33,4 +33,10 @@ export class LoadsComponent implements OnInit {
     );
   }
 
+  async deleteLoad(id: string) {
+    await this.data.deleteOne('/prestamos', `${id}/`).subscribe((res) => {
+      console.log(res);
+      this.getStores();
+    });
+  }
 }

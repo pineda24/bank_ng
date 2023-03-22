@@ -30,16 +30,22 @@
             <th style="font-size: small">#</th>
             <th style="font-size: small">ID de sucursal</th>
             <th style="font-size: small">Cantidad</th>
+            <th style="font-size: small"></th>
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-load>
-          <tr [routerLink]="['./', load.noprestamo]">
-            <td class="d-md-table-cell">
+          <tr>
+            <td class="d-md-table-cell" [routerLink]="['./', load.noprestamo]">
               <div class="d-flex align-items-center"></div>
             </td>
-            <td style="font-size: small">{{ load.noprestamo }}</td>
-            <td style="font-size: small">{{ load.idsucursal }}</td>
-            <td style="font-size: small">{{ load.cantidad }}</td>
+            <td style="font-size: small" [routerLink]="['./', load.noprestamo]">{{ load.noprestamo }}</td>
+            <td style="font-size: small" [routerLink]="['./', load.noprestamo]">{{ load.idsucursal }}</td>
+            <td style="font-size: small" [routerLink]="['./', load.noprestamo]">{{ load.cantidad }}</td>
+            <td style="font-size: small">
+              <button type="button" class="btn btn-link" (click)="deleteLoad(load.noprestamo)">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </td>
           </tr>
         </ng-template>
       </p-table>
