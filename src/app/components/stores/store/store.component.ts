@@ -54,6 +54,7 @@ export class StoreComponent implements OnInit {
       .insertOne('/sucursales', JSON.stringify(this.store))
       .subscribe(
         (res: any) => {
+          console.log(res);
           this.router.navigate(['..'], { relativeTo: this.route });
         },
         (err) => {
@@ -67,6 +68,7 @@ export class StoreComponent implements OnInit {
       .updateOnee('/sucursales',`${this.idStore}/`, this.store)
       .subscribe(
         (res: any) => {
+          console.log(res);
           this.router.navigate(['..'], { relativeTo: this.route });
         },
         (err) => {

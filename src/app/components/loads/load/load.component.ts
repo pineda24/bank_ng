@@ -50,6 +50,7 @@ export class LoadComponent implements OnInit {
       .insertOne('/prestamos', JSON.stringify(this.load))
       .subscribe(
         (res: any) => {
+          console.log(res);
           this.router.navigate(['..'], { relativeTo: this.route });
         },
         (err) => {
@@ -63,6 +64,7 @@ export class LoadComponent implements OnInit {
       .updateOnee('/prestamos', `${this.idLoad}/`, JSON.stringify(this.load))
       .subscribe(
         (res: any) => {
+          console.log(res);
           this.router.navigate(['..'], { relativeTo: this.route });
         },
         (err) => {
@@ -80,6 +82,7 @@ export class LoadComponent implements OnInit {
       .findByParams('/sucursales', '')
       .subscribe(
         (res: any) => {
+          console.log(res);
           this.stores = res.sucursales;
         },
         (err) => {

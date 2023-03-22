@@ -25,6 +25,7 @@ export class LoadsComponent implements OnInit {
   async getStores() {
     await this.data.findByParams('/prestamos', '').subscribe(
       (res) => {
+        console.log(res);
         this.loads = res.prestamos;
       },
       (err) => {
@@ -34,9 +35,14 @@ export class LoadsComponent implements OnInit {
   }
 
   async deleteLoad(id: string) {
-    await this.data.deleteOne('/prestamos', `${id}/`).subscribe((res) => {
-      console.log(res);
-      this.getStores();
-    });
+    await this.data.deleteOne('/prestamos', `${id}/`).subscribe(
+      (res) => {
+        console.log(res);
+        this.getStores();
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 }

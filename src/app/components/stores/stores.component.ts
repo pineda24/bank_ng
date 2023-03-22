@@ -25,6 +25,7 @@ export class StoresComponent implements OnInit {
   async getStores() {
     await this.data.findByParams('/sucursales', '').subscribe(
       (res) => {
+        console.log(res);
         this.stores = res.sucursales;
       },
       (err) => {
@@ -34,9 +35,14 @@ export class StoresComponent implements OnInit {
   }
 
   async deleteStore(id: string) {
-    await this.data.deleteOne('/sucursales', `${id}/`).subscribe((res) => {
-      console.log(res);
-      this.getStores();
-    });
+    await this.data.deleteOne('/sucursales', `${id}/`).subscribe(
+      (res) => {
+        console.log(res);
+        this.getStores();
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 }
